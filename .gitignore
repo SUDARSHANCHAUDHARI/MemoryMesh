@@ -1,0 +1,38 @@
+# User/plugin config
+.Codex-plugin-config.json
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Codex local settings
+.Codex/settings.local.json
+
+# CI/CD workflows are intentionally not used for this repo
+.github/workflows/
+
+# Logs
+*.log
+
+# Environment and secrets
+.env
+.env.*
+*.env
+secrets.*
+credentials.*
+
+# Node
+node_modules/
+dist/
+coverage/
+.turbo/
+
+# Generated archives
+*.zip
