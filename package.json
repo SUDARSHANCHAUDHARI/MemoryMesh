@@ -1,1 +1,25 @@
-{"name":"memorymesh","version":"0.1.0","private":true,"description":"Persistent shared memory for AI coding agents","packageManager":"pnpm@10.0.0","scripts":{"dev":"turbo dev","build":"turbo build","test":"turbo test","lint":"turbo lint"},"devDependencies":{"turbo":"latest","typescript":"latest","tsx":"latest","vitest":"latest"}}
+{
+  "name": "memorymesh",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Persistent shared memory for AI coding agents",
+  "packageManager": "pnpm@10.0.0",
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "test": "turbo test",
+    "lint": "turbo lint"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "turbo": "latest",
+    "typescript": "latest",
+    "tsx": "latest",
+    "vitest": "latest"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}

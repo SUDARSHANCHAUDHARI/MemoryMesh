@@ -1,1 +1,24 @@
-{"name":"@memorymesh/core","version":"0.1.0","type":"module","main":"dist/index.js","types":"dist/index.d.ts","scripts":{"build":"tsc -p tsconfig.json","test":"vitest run"}}
+{
+  "name": "@memorymesh/core",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/memory.js",
+  "types": "dist/memory.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/memory.d.ts",
+      "default": "./dist/memory.js"
+    },
+    "./memory": {
+      "types": "./dist/memory.d.ts",
+      "default": "./dist/memory.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@memorymesh/shared": "workspace:*"
+  }
+}

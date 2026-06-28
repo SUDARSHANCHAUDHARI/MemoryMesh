@@ -1,1 +1,17 @@
-{"name":"@memorymesh/cli","version":"0.1.0","type":"module","bin":{"memorymesh":"src/index.ts"},"dependencies":{"commander":"latest","@memorymesh/sdk":"workspace:*"},"scripts":{"dev":"tsx src/index.ts","build":"tsc -p tsconfig.json"}}
+{
+  "name": "@memorymesh/cli",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "memorymesh": "dist/index.js"
+  },
+  "dependencies": {
+    "@memorymesh/sdk": "workspace:*",
+    "commander": "latest"
+  },
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js"
+  }
+}
