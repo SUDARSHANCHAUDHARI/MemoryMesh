@@ -36,3 +36,6 @@ coverage/
 
 # Generated archives
 *.zip
+
+# Internal docs — kept local, not published
+AGENTS.md
