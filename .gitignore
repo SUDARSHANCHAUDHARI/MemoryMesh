@@ -39,3 +39,6 @@ coverage/
 
 # Internal docs — kept local, not published
 AGENTS.md
+
+# repoguard scan output
+repoguard-results/
