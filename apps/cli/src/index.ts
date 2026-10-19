@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { Command } from 'commander';
 import { defaultStorePath, initMemoryMesh, remember, recall } from '@memorymesh/sdk';
+import { runDoctor } from './doctor.js';
 
 const program = new Command();
 program
@@ -35,11 +36,15 @@ program.command('recall').argument('<query>').action(async (query) => {
   console.log(JSON.stringify(results, null, 2));
 });
 
-program.command('doctor').description('Check MemoryMesh setup').action(() => {
+program.command('doctor').description('Check MemoryMesh setup').action(async () => {
   const options = program.opts<{ store?: string; project: string }>();
-  console.log(`MemoryMesh doctor: ok`);
-  console.log(`Store: ${options.store ?? defaultStorePath()}`);
-  console.log(`Project: ${options.project}`);
+  const checks = await runDoctor(options.store ?? defaultStorePath(), options.project);
+  for (const check of checks) {
+    console.log(`${check.ok ? 'ok  ' : 'FAIL'} ${check.name}: ${check.detail}`);
+  }
+  const failed = checks.filter(check => !check.ok).length;
+  console.log(failed ? `MemoryMesh doctor: ${failed} check(s) failed` : 'MemoryMesh doctor: ok');
+  if (failed) process.exitCode = 1;
 });
 
 program.parse();
